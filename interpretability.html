@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Interpretability Track - The Third Perception Test Challenge at ICCV 2025</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta name="description" content="Details for the Interpretability track of the 3rd Perception Test Challenge at ICCV 2025.">
+
+  <!-- Favicons -->
+  <link href="assets/fav.png" rel="icon">
+  <link href="assets/fav.png" rel="apple-touch-icon">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .banner {
+      max-width: 60%;
+      height: auto;
+      display: block;
+      margin: 0 auto 2rem;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+      color: #202124;
+    }
+
+    a {
+      color: #1a73e8; /* Blue color */
+      text-decoration: none; /* Removes the default underline */
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #f5f5f5;
+      font-size: 0.9rem;
+    }
+    
+    .content-section {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+    
+    .content-section h3 {
+        text-align: left;
+        color: #202124;
+        border-bottom: 2px solid #f1f3f4;
+        padding-bottom: 0.5rem;
+        margin-top: 2rem;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .btn {
+      background: #1a73e8;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #155ec0;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+    Interpretability Track - The 3rd Perception Test Challenge ICCV 2025
+  </h1>
+
+  <div class="section">
+    <h1>Interpretability Track</h1>
+    <p style="text-align:center;">This track focuses on understanding *how* models arrive at their answers in the Perception Test.</p>
+
+  <div class="banner-wrapper">
+    <a href="index.html"><img class="banner" src="bannerPT.png" alt="The 3rd Perception Test Challenge Banner"></a>
+  </div>
+
+    <div class="content-section">
+        <h3>Overview</h3>
+        <p>The goal of the Interpretability track is to encourage the development of techniques that provide insights into how state-of-the-art perception models make their decisions. 
+          Methods can be varied in nature, i.e. behavioral/black-box, mechanistic, or simply visualizations, and on specific tasks in the benchmark as long as they teach us something interesting.  
+          Participants will be asked to submit a colab notebook demonstrating their explanations or predictions on a subset of the Perception Test benchmark, as well as a short peer-reviewed writeup (max 4 pages).</p>
+    </div>
+
+    <div class="content-section">
+        <h3>Resources and Examples</h3>
+        <p>We provide a starter kit with examples for generating visualizations on a subset of the dataset, as well as some reference papers for possible directions to investigate.
+          However, our hope is that you feel the freedom to explore any directions which are promising, so we intentionally keep references light.
+        </p>
+        <ul>
+            <li>Attention Map Visualization Example in Colab 
+              <ul>
+                <li><a href="#" target="_blank">Gemma 3 tutorial</a> in Jax using Penzai</li> 
+                <li><a href="#" target="_blank">PerceptionLM tutorial</a> in PyTorch using Transformer Lens</li>
+              </ul>
+            </li>
+            <li>Starting Ideas for Investigation
+              <ul>
+                <li>
+                  Can we predict the accuracy of our model without labels, perhaps from some other signals in the video? 
+                  This <a href="https://arxiv.org/abs/2305.14802">paper</a> tries to do so for LLMs.
+                </li>
+                <li>
+                  TODO: add more VLM papers
+                </li>
+              </ul>
+            </li>
+        </ul>
+        <p>Here is an example of a visualization showing model attention obtained from the Gemma 3 colab (TODO: replace w/ better PLM viz):</p>
+        <video autoplay loop muted playsinline style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
+            <source src="assets/attn_overlay_transparent_f4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="content-section">
+        <h3>Judging Criteria and Timeline</h3>
+        <p>Submissions will be evaluated single blind by a group of reviewers, and the best submission will be entered in a pool to share a prize. 
+          Ideal submissions will have the following characteristics:</p>
+          <ul>
+            <li><b>Novelty for Videos</b>: Very few techniques have been shown on videos for understanding model behaviors better, so any new additions will be interesting. </li>
+            <li><b>Generality</b>: Some techniques will be particularly specific to subsets of tasks. Good techniques will be applicable to many.</li>
+            <li><b>Resourcefulness</b>: We have a lot of annotations provided in the Perception Test dataset, from object and point tracks to grounded VQA. 
+              While we are attempting to unify these this year, there can be more in-depth analysis using them to better understand model behavior.</li>
+            <!-- <li>Interpretability </li> -->
+          </ul>
+        <p>The timeline for this track follows the main challenge:</p>
+        <ul>
+          <li><b>August 22</b>: Interpretability track begins</li>
+          <li><b>October 6</b>: Deadline for submissions (11:59pm AOE)</li>
+          <li><b>October 10</b>: Decision to participants</li>
+        </ul>
+        <p>Upload your final pdfs and colab notebook files to this Google Form (TODO: add unified form).</p>
+    </div>
+
+    <div class="button-row">
+        <a href="index.html" class="btn">Back to Main Page</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Perception Test Team — All Rights Reserved
+  </footer>
+</body>
+</html>
