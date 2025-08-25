@@ -116,7 +116,7 @@
     <div class="content-section">
         <h3>Overview</h3>
         <p>The goal of the Interpretability track is to encourage the development of techniques that provide insights into how state-of-the-art perception models make their decisions. 
-          Methods can be varied in nature, i.e. behavioral/black-box, mechanistic, or simply visualizations that explain why a model succeeds or fails at a specific task in the Perception Test.  
+          Methods can be varied in nature, i.e. behavioral/black-box, mechanistic, or simply visualizations that explain why a model succeeds or fails at one or more Perception Test tasks.  
           Participants will be asked to submit a colab notebook demonstrating their explanations or predictions on example videos from the Perception Test benchmark, as well as a short tech report (max 2 pages).</p>
         <p>Bonus points for works that leverage the different types of annotations in the Perception Test to design quantitative explainability methods, e.g. show correlations between saliency / attention maps produced when answering videoQAs and ground truth object tracks.</p>
     </div>
@@ -125,6 +125,16 @@
         <h3>Resources and Examples</h3>
         <p>You can use any method you prefer, as long as it highlights convincingly how a model solves (or fails at solving) some task in the Perception Test. We provide a starter kit with examples for generating visualizations on videos from the Perception Test, as well as some reference papers for possible directions to investigate.
         </p>
+        <p>Choosing a <i>Perception Test task</i></p>
+        <p>In Perception Test, there are 132 unique questions in the multiple-choice videoQA dataset. Each question is applied to multiple videos (from 20 videos up to more than 1000 videos). We define as <i>Perception Test task</i> a videoQA and the videos it is applied to across train / valid / test splits of the benchmark.</p>
+        <p>A meaningful interpretability method should identify a pattern or explanation that applies to all videos within one or more tasks.</p>
+
+      <p>E.g. for the task: "How many cups does the person use in cups-games?", there are X train, Y valid, Z test videos; see example below.</p>
+      <p>These videos also have ground truth annotations for object tracks, action segments, sound segments that can be used to </p>
+      <p>TODO: add object tracks visualisation for the same example</p>
+      
+      
+      
         <ul>
             <li>Attention Map Visualization Example in Colab 
               <ul>
