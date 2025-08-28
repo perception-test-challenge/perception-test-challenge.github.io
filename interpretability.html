@@ -109,9 +109,13 @@
     <h1>Interpretability Track</h1>
     <p style="text-align:center;">Use Perception Test as a benchmark for VLM interpretability and win prizes!</p>
 
-  <div class="banner-wrapper">
+  <!-- <div class="banner-wrapper">
     <a href="index.html"><img class="banner" src="bannerPT.png" alt="The 3rd Perception Test Challenge Banner"></a>
-  </div>
+  </div> -->
+    <video autoplay loop muted playsinline style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
+        <source src="assets/fixed_num_cups.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <div class="content-section">
         <h3>Overview</h3>
@@ -137,13 +141,10 @@
       <p>These videos also have ground truth annotations for object tracks, action segments, and sound segments that can be used to prove that the model is paying attention to the relevant spatio-temporal regions in the frames.</p>
       <p>TODO: add object tracks visualisation for the same example</p>
 
-      <p>Here is an example of a visualization using this information combined with the model attention using 4 frames as input.
+      <p>Featured at the top of this page is an example of a visualization using this information combined with the model attention using 4 frames as input.
           At layers 12, 13, and 14, we can see where the model pays particular attention to (some of the cups, but also other areas!):
-        <video autoplay loop muted playsinline style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
-            <source src="assets/fixed_num_cups.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
       </p>
+
       <p>Here is what the maximum activation over all of the layers looks like overlaid on the video frames.
       <img src="assets/fixed_num_cups_max.png" alt="Maximum activations over layers" style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
       </p>
