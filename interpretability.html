@@ -139,39 +139,50 @@
           <i>"The person uses multiple similar objects to play an occlusion game. How many such objects does the person use?"</i>.</p>
           There are 116 (out of 2184) train, 305 (out of 5900) valid, and 189 (out of 3525) test videos; see example below.</p>
       <p>These videos also have ground truth annotations for object tracks, action segments, and sound segments that can be used to prove that the model is paying attention to the relevant spatio-temporal regions in the frames.</p>
-      <p>TODO: add object tracks visualisation for the same example</p>
 
-      <p>Featured at the top of this page is an example of a visualization using this information combined with the model attention using 4 frames as input.
-          At layers 12, 13, and 14, we can see where the model pays particular attention to (some of the cups, but also other areas!):
+      <p>Featured at the top of this page is an example of a visualization using the ground truth object tracks overlaid with the visual attention from PerceptionLM using 4 frames as input.
+          At intermediate layers, we can see where the model pays particular attention to (some of the cups, but also other areas!):
       </p>
 
       <p>Here is what the maximum activation over all of the layers looks like overlaid on the video frames.
       <img src="assets/numcups_attn_box.png" alt="Maximum activations over layers" style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
       </p>
       You can find this visualization in the PerceptionLM demo notebook linked above.
+      An immediate interesting question which has been tackled before in vision but not for video is to better understand how this attention is geometrically distributed
+      with respect to the bounding boxes.
+      This notebook provides a jump start for those interested in this type of analysis, as well as others enabled by the powerful flexibility of TransformerLens. 
     
       <p></p>
 
-
-        Some suggested resources ideas, to make getting started simpler but by no means necessary to follow:
+        Some suggested resources ideas, to directy your investigation but are by no means necessary to follow:
         <ul>
-            <li>Attention Map Visualization Example in Colab 
-              <ul>
-                <li><a href="#" target="_blank">PerceptionLM tutorial</a> in PyTorch using Transformer Lens</li>
+            <li>
+              <a href="https://github.com/ptchallenge-workshop/TransformerLens/blob/master/demos/PerceptionLM_Demo.ipynb"
+                   target="_blank">PerceptionLM tutorial</a> in PyTorch using Transformer Lens for visualizing attention maps overlaid on object bounding box tracks.
                 <!-- <li><a href="#" target="_blank">Gemma 3 tutorial</a> in Jax using Penzai</li>  -->
-                <li>Gemma 3 tutorial in Jax using Penzai (coming soon)</li> 
-              </ul>
+                <!-- <li>Gemma 3 tutorial in Jax using Penzai (coming soon)</li>  -->
+            <li>
+              <p>
+              Can we predict the accuracy of our model without labels, perhaps from some other signals in the video? 
+              This <a href="https://arxiv.org/abs/2305.14802">paper</a> tries to do so for LLMs by training a meta-model on top of confidence scores.
+              </p>
             </li>
-            <li>Starting Ideas for Investigation
-              <ul>
-                <li>
-                  Can we predict the accuracy of our model without labels, perhaps from some other signals in the video? 
-                  This <a href="https://arxiv.org/abs/2305.14802">paper</a> tries to do so for LLMs.
-                </li>
-                <li>
-                  TODO: add more VLM papers
-                </li>
-              </ul>
+            <li>
+              <p>
+              How well can mechanistic interpretability tools be used VLMs, and by extension Video-Language Models (VidLMs)? 
+              There are existing papers which use logit lens (<a href="https://arxiv.org/abs/2410.02762">[1]</a>, 
+              <a href="https://arxiv.org/abs/2411.16724">[2]</a>) to analyze object hallucinations, tracking them 
+              to low confidence logit readouts and poor visual attention activity in early layers. 
+              How do we extend these to VidLMs, and how to we aggregate the information across frames?
+              </p>
+            </li>
+            <li>
+              <p>
+                Other papers (<a href="https://arxiv.org/abs/2503.01773">[3]</a>) have looked at the geometric distribution 
+                of attention in the image as an indicator for how well LLaVA models can do spatial reasoning.
+                Can we use our ground truth object bounding labels to also analyze how informative these attention maps are for 
+                accurate video reasoning?
+              </p>
             </li>
         </ul>
     </div>
@@ -193,7 +204,7 @@
           <li><b>October 6</b>: Deadline for submissions (11:59pm AOE)</li>
           <li><b>October 10</b>: Decision to participants</li>
         </ul>
-        <p>Upload your final pdfs and colab notebook files to this Google Form (TODO: add unified form).</p>
+        <p>Upload your final colab notebook files and short tech reports to this Google Form (TODO: add unified form).</p>
     </div>
 
     <div class="button-row">
