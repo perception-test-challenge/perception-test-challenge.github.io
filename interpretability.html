@@ -129,10 +129,7 @@
     </div>
 
     <div class="content-section">
-        <h3>Resources and Examples</h3>
-        <p>We provide a starter kit with examples for generating visualizations on videos from the Perception Test, as well as some reference papers for possible directions to investigate.
-        </p>
-        <h4>Choosing a <i>Perception Test task</i></h4>
+        <h3>Perception Test tasks</h3>
         <p>In Perception Test, there are 132 unique questions in the multiple-choice videoQA dataset. Each question is applied to multiple videos (from 20 videos up to more than 1000 videos). We define as <i>Perception Test task</i> a videoQA and the videos it is applied to across train / valid / test splits of the benchmark.</p>
         A meaningful interpretability method should identify a pattern or explanation that applies to all or most of the videos within one or more tasks. </p>
 
@@ -143,6 +140,9 @@
           For this task, there are 116 (out of 2184) train, 305 (out of 5900) valid, and 189 (out of 3525) test videos; see example below.</p>
       <p>These videos also have ground truth annotations for object tracks, action segments, and sound segments that can be used to prove that the model is paying attention to the relevant spatio-temporal regions in the frames.</p>
 
+      <h3>Resources and Examples</h3>
+      <p>We provide a starter kit with examples for generating visualizations on videos from the Perception Test, as well as some reference papers for possible directions to investigate.
+      
       <p>Featured at the top of this page is an example of a visualization using the ground truth object tracks overlaid with the visual attention from PerceptionLM using 4 frames as input.
           At intermediate layers, we can see where the model pays particular attention to (some of the cups, but also other areas!):
       </p>
@@ -150,14 +150,11 @@
       <p>Here is what the maximum activation over all of the layers looks like overlaid on the video frames.
       <img src="assets/numcups_attn_box.png" alt="Maximum activations over layers" style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
       </p>
-      You can find this visualization in the PerceptionLM demo notebook linked above.
-      An immediate interesting question which has been tackled before in vision but not for video is to better understand how this attention is geometrically distributed
-      with respect to the bounding boxes.
-      This notebook provides a jump start for those interested in this type of analysis, as well as others enabled by the powerful flexibility of TransformerLens. 
+      You can find this visualization in the PerceptionLM demo notebook linked below, which uses TransformerLens. 
     
       <p></p>
 
-        Some suggested resources ideas, to directy your investigation but are by no means necessary to follow:
+        Suggested resources and ideas to explore (please ignore if not useful for your approach):
         <ul>
             <li>
               <a href="https://github.com/ptchallenge-workshop/TransformerLens/blob/master/demos/PerceptionLM_Demo.ipynb"
