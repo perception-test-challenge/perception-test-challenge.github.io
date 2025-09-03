@@ -112,10 +112,18 @@
   <!-- <div class="banner-wrapper">
     <a href="index.html"><img class="banner" src="bannerPT.png" alt="The 3rd Perception Test Challenge Banner"></a>
   </div> -->
-    <video autoplay loop muted playsinline style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
-        <source src="assets/attn_overlay_numcups_f4_2x2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+    <figure style="margin: 0;">
+    <video autoplay loop muted playsinline style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem; display: block;">
+      <source src="assets/attn_overlay_numcups_f4_2x2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
     </video>
+    <figcaption style="text-align: center; padding: 8px; font-style: italic;">
+      Visualization of the attention maps of PerceptionLM with four video frames as input overlaid with ground truth object tracks (each layer shown as a frame).
+      
+      Question is "How many cups does the person use?"
+    </figcaption>
+    </figure>
+
 
     <div class="content-section">
         <h3>Overview</h3>
@@ -149,7 +157,14 @@
           At intermediate layers, we can see where the model pays particular attention to (some of the cups, but also other areas!):
       </p>
 
-      <p>The figure above shows the maximum activations over all the layers overlaid on the video frames.
+      <p>The figure below shows the maximum activations over all the layers overlaid on the video frames.
+
+      <figure style="margin: 0;">
+        <img src="assets/numcups_attn_box.png" alt="Maximum activations over layers" style="max-width: 100%; width: 100%; border-radius: 8px; margin-top: 1rem;">
+        <figcaption style="text-align: center; padding: 8px; font-style: italic;">
+          Maximum activations over all layers and heads. We can see the attention has high overlap with the objects in the first and last frames (as shown by the boxes).
+        </figcaption>
+      </figure>
       </p>
       You can find this visualization in the PerceptionLM demo notebook linked below, which uses TransformerLens. 
     
