@@ -164,25 +164,19 @@
                 <!-- <li>Gemma 3 tutorial in Jax using Penzai (coming soon)</li>  -->
             <li>
               <p>
-              Can we predict the accuracy of our model without labels, perhaps from some other signals in the video? 
+              Predict the accuracy of the model without labels, perhaps from some other signals in the model, e.g. confidence. 
               This <a href="https://arxiv.org/abs/2305.14802">paper</a> tries to do so for LLMs by training a meta-model on top of confidence scores.
               </p>
             </li>
             <li>
-              <p>
-              How well can mechanistic interpretability tools be used VLMs, and by extension Video-Language Models (VidLMs)? 
-              There are existing papers which use logit lens (<a href="https://arxiv.org/abs/2410.02762">[1]</a>, 
-              <a href="https://arxiv.org/abs/2411.16724">[2]</a>) to analyze object hallucinations, tracking them 
-              to low confidence logit readouts and poor visual attention activity in early layers. 
-              How do we extend these to VidLMs, and how to we aggregate the information across frames?
+              <p>  
+              Use logit lens to analyze object hallucinations. E.g. These papers (<a href="https://arxiv.org/abs/2410.02762">[1]</a>, 
+              <a href="https://arxiv.org/abs/2411.16724">[2]</a>) analyse image VLMs, attributing hallucinations to low confidence logit readouts and poor visual attention activity in early layers. 
               </p>
             </li>
             <li>
-              <p>
-                Other papers (<a href="https://arxiv.org/abs/2503.01773">[3]</a>) have looked at the geometric distribution 
-                of attention in the image as an indicator for how well LLaVA models can do spatial reasoning.
-                Can we use our ground truth object bounding labels to also analyze how informative these attention maps are for 
-                accurate video reasoning?
+              <p>Analyse the geometric distribution 
+                of attention as an indicator for how well models can do spatial reasoning; e.g. this paper (<a href="https://arxiv.org/abs/2503.01773">[3]</a>) for image VLMs. 
               </p>
             </li>
         </ul>
