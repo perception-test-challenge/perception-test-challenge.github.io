@@ -98,6 +98,40 @@
     .btn:hover {
       background: #155ec0;
     }
+
+    .nice-table {
+      width: 100%;
+      border-collapse: collapse; /* Collapses the borders into a single border */
+      margin: 25px 0;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      min-width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .nice-table thead tr {
+      <!-- background-color: #4e70fa; -->
+      background-color: #f1f1f1;
+      <!-- color: #ffffff; -->
+      text-align: left;
+    }
+
+    .nice-table th,
+    .nice-table td {
+      padding: 12px 15px;
+    }
+
+    .nice-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .nice-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3; /* Zebra-striping for even rows */
+    }
+
+    .nice-table tbody tr:hover {
+      background-color: #f1f1f1; /* Highlight row on hover */
+    }
   </style>
 </head>
 <body>
@@ -156,6 +190,72 @@
       </figure>
       </p>
       
+      <h3>Getting Started with Perception Test</h3>
+      <p>To get started with Perception Test, our github page has all of the relevant information. Below is a list of pointers to useful information:</p>
+      <!-- <ul>
+        <li>
+          <a href="https://github.com/google-deepmind/perception_test">Perception Test Github page</a>
+        </li>
+      </ul> -->
+
+      <table class="nice-table">
+  <!-- <caption>Employee Information</caption> -->
+  <!-- <thead>
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Email</th>
+      <th>Location</th>
+    </tr>
+  </thead> -->
+  <tbody>
+    <tr>
+      <td><b>Getting Started</b></td>
+      <td><a href="https://github.com/google-deepmind/perception_test">Perception Test Github Page</a> </td> 
+      <td>Demo: <a href="https://github.com/deepmind/perception_test/blob/main/data_visualisation.ipynb">data_visualisation.ipynb</a> </td> 
+        <!-- 5-minute summary video, examples, annotation details, and a human quiz.</td> -->
+    </tr>
+    <tr>
+      <td><b>Sample Split</b></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/sample_videos.zip">sample_videos.zip (215MB)</a></td>
+      <td> <a href="https://storage.googleapis.com/dm-perception-test/zip_data/sample_audios.zip">sample_audios.zip (84MB)</a></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/sample_annotations.zip">sample_annotations.zip (3MB)</a></td>
+    </tr>
+    <tr>
+      <td><b>Train Split</b></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/train_videos.zip">train_videos.zip (26.5GB)</a></td>
+      <td> <a href="https://storage.googleapis.com/dm-perception-test/zip_data/train_audios.zip">train_audios.zip (12.3GB) </a></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/train_annotations.zip">train_annotations.zip (30.6MB)</a></td>
+    </tr>
+    <tr>
+      <td><b>Valid Split</b></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/valid_videos.zip">valid_videos.zip (70.2GB)</a></td>
+      <td> <a href="https://storage.googleapis.com/dm-perception-test/zip_data/valid_audios.zip">valid_audios.zip (33.1MB)</a></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/valid_annotations.zip">valid_annotations.zip (81.5MB)</a></td>
+    </tr>
+    <tr>
+      <td><b>Test Split</b></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/test_videos.zip">test_videos.zip (41.8GB)</a></td>
+      <td> <a href="https://storage.googleapis.com/dm-perception-test/zip_data/test_audios.zip">test_audios.zip (19.3GB)</a></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/zip_data/test_annotations.zip">test_annotations.zip (633.9kB)</a></td>
+    </tr>
+    <tr>
+      <td><b>Cut Frames</b></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/misc/cut_frame_mapping_train.json">cut_frame_mapping_train.json</a></td>
+      <td><a href="https://storage.googleapis.com/dm-perception-test/misc/cut_frame_mapping_valid.json">cut_frame_mapping_valid.json</a></td>
+      <td>For videos where the end gives away the answer (cup-games, stability, etc.)</td>
+    </tr>
+
+    <tr>
+      <td>Annotation Details</td>
+      <td><a href="https://github.com/google-deepmind/perception_test?tab=readme-ov-file#perception-test-annotations">Descriptions</a> on Github.</td>
+      <!-- <td>john.doe@example.com</td> -->
+    </tr>
+
+  </tbody>
+</table>
+
+    <!-- <div class="content-section">  -->
 
       <h3>Resources and Examples</h3>
       <p>We provide a starter kit with examples for generating visualizations on videos from the Perception Test, as well as some reference works that study LLMs or image VLMs, which might be applicable to video VLMs.
