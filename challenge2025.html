@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Third Perception Test Challenge at ICCV 2025</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta name="description" content="The 3rd Perception Test Challenge at ICCV 2025 evaluates models on physics-aware reasoning, tracking, localization, and VQA with over 50K EUR in prizes.">
+
+  <!-- Favicons -->
+  <link href="assets/fav.png" rel="icon">
+  <link href="assets/fav.png" rel="apple-touch-icon">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .banner {
+      max-width: 60%;
+      height: auto;
+      display: block;
+      margin: 0 auto 2rem;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #202124;
+    }
+
+    .agenda ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .agenda li {
+      background: #f1f3f4;
+      margin: 0.4rem 0;
+      padding: 0.5rem;
+      border-radius: 6px;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .btn {
+      background: #1a73e8;
+      color: white;
+      padding: 0.5rem 1.0rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #155ec0;
+    }
+
+    .organizers {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .organizer {
+      text-align: center;
+      width: 140px;
+    }
+
+    .organizer img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ccc;
+    }
+
+    .speakers {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .speaker {
+      text-align: center;
+      width: 180px;
+    }
+
+    .speaker img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ccc;
+    }
+
+    a {
+      color: #1a73e8; /* Blue color */
+      text-decoration: none; /* Removes the default underline */
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #f5f5f5;
+      font-size: 0.9rem;
+    }
+    #kiva-interactive-root {
+      max-width: 900px;
+      margin: 2rem auto; /* Matches .section margin */
+      padding: 0 1rem; /* Matches .section padding */
+    }
+    .highlight {
+      font-weight: bold;
+      color: #007acc;
+    }
+    .video-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style for each video element */
+video {
+    width: 48%; /* Adjust this value as needed */
+    max-width: 100%;
+    height: auto;
+}
+  </style>
+</head>
+<body>
+  <h1 style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+    The 3rd Perception Test Challenge ICCV 2025
+  </h1>
+
+  <div class="section">
+    <h1>The 3rd Perception Test Challenge at ICCV<h1>
+      <h2>19 October 2025, Honolulu [BALLROOM B, Full day, 9am-5pm]</h2>
+
+    <!--<div class="banner-wrapper">
+      <img class="banner" src="bannerPT.png" alt="The 3rd Perception Test Challenge Banner">
+    </div>-->
+    <div class="video-container">
+              <!-- Video 1 -->
+              <video controls autoplay muted loop id="videoId">
+                  <source src="assets/vis.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <video controls autoplay muted loop id="videoId">
+                  <source src="assets/vis_2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+
+    <p style="text-align:justify;">How strong is your perception model? Can it track objects and points even through strong occlusions? Can it localise actions and sounds? Can it answer questions that require memory and understanding of physics, abstraction, and semantics? Can it reason over hour-long videos?</p>
+    <p style="text-align:left;">Put your model to test and win prizes totalling 50K EUR across 6 tracks!</p>
+
+    <p style="text-align:left;"><b>NEW this year</b>: VQA is a unified track containing regular video QAs, but also questions related to point tracking, object tracking, action localisation in a video QA format.</p>
+    <p style="text-align:left;"><b>NEW this year</b>: Points&Objects is a unified track where a single model has to track both points and objects.</p>
+    <p style="text-align:left;"><b>NEW this year</b>: Actions&Sounds is a unified track where a single model has to localise in time both actions and sounds.</p>
+    <p style="text-align:left;"><b>NEW this year</b>: Perception Test interpretability track (<b>open for submission until Dec 1, 2025</b>).</p>
+    <p style="text-align:left;"><b>NEW this year</b>: We have 2 guest tracks: <b>KiVA</b> (image evaluation probing visual analogies skills), and <b>Physics-IQ</b> (assessing if generative models generate physics-aware videos).</p>
+
+    <div class="section">
+    <h2>Challenge tracks</h2>
+    <div class="button-row">
+      <a href="https://eval.ai/web/challenges/challenge-page/2547/overview" class="btn" target="_blank">VQA</a>
+      <a href="https://eval.ai/web/challenges/challenge-page/2563/overview" class="btn" target="_blank">Points&Objects</a>
+      <a href="https://eval.ai/web/challenges/challenge-page/2559/overview" class="btn" target="_blank">Actions&Sounds</a>
+      <a href="https://eval.ai/web/challenges/challenge-page/2558/overview" class="btn" target="_blank">GroundedVQA</a>
+      <a href="https://eval.ai/web/challenges/challenge-page/2564/overview" class="btn" target="_blank">1h-VQA</a>
+      <a href="interpretability.html" class="btn" target="_blank">Interpretability</a> 
+    </div> 
+    </div>  
+    <div class="section">
+    <h2>Guest tracks</h2>
+      <div class="button-row">
+      <a href="https://physics-iq.github.io/workshop/physics-iq-challenge.html" class="btn" target="_blank">Physics-IQ</a>
+      <a href="https://kiva-challenge.github.io/" class="btn" target="_blank">KiVA</a>
+    </div>
+    </div>
+  </div>
+
+   <div class="section">
+    <h2>Speakers</h2>
+    <div class="speakers">
+      <div class="speaker">
+        <img src="assets/ali.jpeg" alt="">
+        <div><a href="https://www.cs.washington.edu/people/faculty/ali-farhadi/" target="_blank">Ali Farhadi</a></div>
+        <small>University of Washington</small>
+      </div>
+      <div class="speaker">
+        <img src="assets/Alison.jpg" alt="">
+        <div><a href="https://psychology.berkeley.edu/people/alison-gopnik" target="_blank">Alison Gopnik</a></div>
+        <small>UC Berkeley</small>
+      </div>
+      <div class="speaker">
+        <img src="assets/philipp.jpg" alt="">
+        <div><a href="https://www.philkr.net/" target="_blank">Philipp Krähenbühl</a></div>
+        <small>University of Texas at Austin</small>
+      </div>
+      <div class="speaker">
+        <img src="assets/PhillipIsola.jpeg" alt="">
+        <div><a href="https://web.mit.edu/phillipi/" target="_blank">Phillip Isola</a></div>
+        <small>MIT</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="section agenda">
+    <h2>Workshop Agenda</h2>
+    <ul>
+      <li>09:00 - 09:10 Welcome and introduction (Joao Carreira)</li>
+      <li>09:10 - 09:40 Perception Test overview (Viorica Patraucean)</li>
+      <li class="highlight">09:40 - 10:10 Keynote (Ali Farhadi) </li>
+      <li>10:10 - 10:40 Coffee break</li>
+      <li>10:40 - 10:50 Challenges overview and winner announcement (Joe Heyward)</li>
+      <li>10:55 - 11:20 Oral presentations from the challenge winners</li>
+      <li class="highlight">11:20 - 11:50 Keynote (Philipp Krähenbühl)</li>
+      <li>11:50 - 12:30 Panel discussion</li>
+      <li>12:30 - 14:00 Lunch break</li>
+      <li class="highlight">
+      <details>
+        <summary>14:00 – 15:10 KiVA Guest Track (Keynote: Alison Gopnik)</summary>
+        <ul>
+          <li>14:00 – 14:30 Keynote: Alison Gopnik</li>
+          <li>14:30 – 14:40 KiVA Challenge Overview & Winner Announcement</li>
+          <li>
+            14:40 – 15:05 Presentations by Top Three Winners  
+            <em>(7 min each + 1 min Q&A)</em>
+          </li>
+        </ul>
+      </details>
+    </li>
+      <li>15:10 - 15:30 Coffee break</li>
+      <li class="highlight">
+      <details>
+        <summary>15:30 - 17:00 Physics-IQ Guest Track (Keynote: Phillip Isola)</summary>
+        <ul>
+          <li>15:30 - 16:05 Keynote and Q/A by Phillip Isola</li>
+          <li>16:05 - 16:20 Physics-IQ Challenge Overview & Winner Announcement</li> 
+          <li>16:20 - 17:00 Presentations by Top Three Winners</li>
+          </ul>
+      </details>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="section winners">
+  <h2>The Third Perception Test Challenge Winners</h2>
+
+<p>We received <strong>557 submissions</strong> from <strong>81 teams</strong> across five tracks. We awarded runner-up and winner prizes per track. For tracks where the top performing entries were very close in performance, but had very different approaches, we awarded 2 teams as winners.</p>
+
+<hr>
+
+<h3>Unified multiple-choice videoQA</h3>
+<ul>
+    <li>Winner: <strong>Team Wind_Rain_Tower</strong> (Du Jingtao) <a href="https://drive.google.com/file/d/1fwb1q-I1V0dCUT6p7DdNV6YYnaUDjRCn/view?usp=sharing" target="_blank">report</a></li>
+    <li>Winner: <strong>Team njust_kmg_2</strong> (Zhe Zhang, Haotian Si, Xiangbo Shu, Yang Yang) <a href="https://drive.google.com/file/d/1AS9_dIw6H9r9EGzxIktTUY85fcL-F0Dk/view?usp=sharing" target="_blank">report</a></li>
+    <li>Runner-up: <strong>Team PCIE_VQA</strong> (Feng Chen, Kanokphan Lertniphonphan, Jun Xie, Zimeng Tan, Zhepeng Wang) <a href="https://drive.google.com/file/d/1tEkkSAUFbVOsBSuVbT58wsmSOsrNuA84/view?usp=sharing" target="_blank">report</a></li>
+</ul>
+
+<hr>
+
+<h3>Grounded videoQA</h3>
+<ul>
+    <li>Winner: <strong>Team SGVR@KAIST</strong> (Jinhwan Seo, Yoonki Cho, Junhyug Noh, Sung-eui Yoon) <a href="https://drive.google.com/file/d/1YahPyJe2PEaj2VAWl0g9yusI-nkqvbtA/view?usp=sharing" target="_blank">report</a></li>
+    <li>Runner-up: <strong>Team TutuAI</strong> (Yixiao Yuan, Yingzhe Peng) <a href="https://drive.google.com/file/d/1hJO45Wl56s3uggbjM-DiIxWKCVyoqAj4/view?usp=sharing" target="_blank">report</a></li>
+</ul>
+
+<hr>
+
+<h3>Hour-long videoQA</h3>
+<ul>
+    <li>Winner: <strong>Team NJUST—_KMG</strong> (Yinan Han, Li Wang, Qingyuan Jiang, Yang Yang) <a href="https://drive.google.com/file/d/1TefYQ7FtSidIfqPMjBM7mXoo6RR4Nevr/view?usp=sharing" target="_blank">report</a></li>
+    <li>Runner-up: <strong>Team Oair_Hunter</strong> (Haoxuan Ma, Yongliang Wu, Bozheng Li, Yangguang Ji, Jiawang Cao, Licheng Tang, Wenbo Zhu, Jay Wu, Xu Yang, Zhenxiang Jiang) <a href="https://drive.google.com/file/d/1OWzScLt7kfDhXzaeAFEee-UxkARyFObw/view?usp=sharing" target="_blank">report</a></li>
+</ul>
+
+<hr>
+
+<h3>Joint object and point tracking</h3>
+<ul>
+    <li>Winner:<strong>Team NJUST KMG</strong> (Zhi-Qiang Zhong, Yang Yang, Jing-Long Li, Xiang-Yang Ji) <a href="https://drive.google.com/file/d/1NDoyJx3-3STVR3jWiBokQpN7dk1CQ6pW/view?usp=sharing" target="_blank">report</a></li>
+    <li>Winner: <strong>Team 30497</strong> (Jiale Li) <a href="https://drive.google.com/file/d/1bIpJ00N-QK8VTCY8nvdJFFeYG0YqpyvJ/view?usp=sharing" target="_blank">report</a></li>
+    <li>Runner-up: <strong>Team LC</strong> (Veronika Prokhorchuk, Kostiantyn Kovalov, Naum Ochkus) <a href="https://drive.google.com/file/d/1K0wpSmbECPKQS3-gZ-k6-VHTyZkFblKV/view?usp=sharing" target="_blank">report</a></li>
+</ul>
+
+<hr>
+
+<h3>Joint action and sound localisation</h3>
+<ul>
+    <li>Winner: <strong>Team NJUST—_KMG</strong> (Yinan Han, Xiang Yang, Yang Yang) <a href="https://drive.google.com/file/d/1rSwXLLcQEVPnbCHXyw4pftwNnv8KRuAJ/view?usp=sharing" target="_blank">report</a></li>
+    <li>Runner-up: <strong>Team SV</strong> (Hengzhi Zhang) <a href="https://drive.google.com/file/d/1tQ07KdRvcaxE2ZtzwMycYcEmzTwzu6bw/view?usp=sharing" target="_blank">report</a></li>
+</ul>
+    
+  </div>
+
+  <div class="section agenda">
+    <h2>Challenge Timeline</h2>
+    <ul>
+      <li><b>June 20</b>: Challenge server with validation tasks goes live</li>
+      <li><b>September 1</b>: Test data and tasks released</li>
+      <li><b>October 6</b>: Deadline for submissions</li>
+      <li><b>October 8</b>: Deadline for tech report submissions</li>
+      <li><b>October 13</b>: Decision to participants</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Organizers</h2>
+    <div class="organizers">
+      <div class="organizer">
+        <img src="assets/joe.png" alt="">
+        <div>Joe Heyward</div>
+        <small>Google DeepMind</small>
+      </div>
+      <div class="organizer">
+        <img src="assets/nikhil.jpg" alt="">
+        <div>Nikhil Parthasarathy</div>
+        <small>Google DeepMind</small>
+      </div>
+      <div class="organizer">
+        <img src="assets/tyler.jpg" alt="">
+        <div>Tyler Zhu</div>
+        <small>Princeton University, Google DeepMind</small>
+      </div>
+      <div class="organizer">
+        <img src="assets/aravindh.jpeg" alt="">
+        <div>Aravindh Mahendran</div>
+        <small>Google DeepMind</small>
+      </div>
+      <div class="organizer">
+        <img src="assets/joao.jpg" alt="">
+        <div>Joao Carreira</div>
+        <small>Google DeepMind</small>
+      </div>
+      <div class="organizer">
+        <img src="assets/dima.jpg" alt="">
+        <div>Dima Damen</div>
+        <small>Bristol University</small>
+      </div>
+      <div class="organizer">
+        <img src="assets/andrew.jpg" alt="">
+        <div>Andrew Zisserman</div>
+        <small>Oxford University</small>
+      </div>
+      <div class="organizer">
+        <img src="assets/viorica.jpg" alt="">
+        <div>Viorica Patraucean</div>
+        <small>Google DeepMind</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Previous workshops</h2>
+    <div class="button-row">
+      <a href="https://ptchallenge-workshop.github.io/" class="btn" target="_blank">Challenge 2024</a>
+      <a href="https://ptchallenge-workshop.github.io/challenge2023.html" class="btn" target="_blank">Challenge 2023</a>
+      <a href="https://computerperception.github.io/" class="btn" target="_blank">Workshop 2022</a>
+      
+    </div>
+  </div>
+      
+
+  <footer>
+    &copy; 2025 Perception Test Team — All Rights Reserved
+  </footer>
+</body>
+</html>
