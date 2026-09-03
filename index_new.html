@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <title>Spatial Intelligence: from Table-top to City-scale — ECCV 2026</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="The 4th Perception Test Challenge at ECCV 2026 evaluates models on small scale and large scale spatial intelligence, with 20K EUR in prizes.">
+
+  <!-- Favicons -->
+  <link href="assets/fav.png" rel="icon">
+  <link href="assets/fav.png" rel="apple-touch-icon">
+
+  <!-- Inter Font & Tailwind CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased text-slate-800 bg-slate-50 selection:bg-indigo-100 selection:text-indigo-900">
+
+  <!-- Top Accent Bar -->
+  <div class="h-1.5 w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500"></div>
+
+  <!-- Main Container -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-10">
+
+    <!-- ==================== HEADER CARD ==================== -->
+    <header class="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-10 shadow-sm text-center relative overflow-hidden">
+      <!-- Background glow effect -->
+      <div class="absolute -top-24 -left-24 w-64 h-64 bg-indigo-50 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-blue-50 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10">
+        <!-- Main Workshop Title -->
+        <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight sm:leading-snug mb-3">
+          Spatial Intelligence: <br class="hidden sm:inline" />
+          <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            from Table-top to City-scale
+          </span>
+        </h1>
+
+        <!-- Workshop Subtitle -->
+        <p class="text-base sm:text-xl font-medium text-slate-600 mb-6 tracking-normal">
+          The 4th Perception Test Challenge at ECCV 2026
+        </p>
+
+        <!-- Workshop Metadata Badges -->
+        <div class="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-medium text-slate-600">
+          <!-- Date -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 shadow-2xs">
+            <svg class="w-4 h-4 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>9 September 2026</span>
+          </div>
+
+          <!-- Location -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 shadow-2xs">
+            <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Malmö, Sweden</span>
+          </div>
+
+          <!-- Time -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 shadow-2xs">
+            <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span>09:00 – 12:30 CEST</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- ==================== VIDEOS SHOWCASE ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="overflow-hidden rounded-xl bg-slate-950 border border-slate-200 shadow-sm aspect-video flex items-center justify-center">
+          <video controls autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="assets/vis_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="overflow-hidden rounded-xl bg-slate-950 border border-slate-200 shadow-sm aspect-video flex items-center justify-center">
+          <video controls autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="assets/viz_wt.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <p class="text-xs text-center text-slate-500 mt-3.5">
+        Visualizations of spatial perception tasks evaluated across diverse real-world scales and multimodal walking tours.
+      </p>
+    </section>
+
+
+    <!-- ==================== OVERVIEW & TRACK ANNOUNCEMENTS ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6 leading-relaxed">
+      <p class="text-slate-700 text-justify text-base sm:text-lg">
+        Do large multimodal models truly understand the spatial structure of the world they perceive? Given that they are largely trained on passive, internet-scale data, how do they represent environments across scales, from the tabletop in a tea preparation video to the city-scale layout of an hour-long walking tour?
+      </p>
+
+      <!-- Prize Pool Callout -->
+      <div class="flex items-center gap-3.5 p-4 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 text-amber-950">
+        <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-amber-100 text-amber-700 shrink-0 font-bold text-lg">
+          🏆
+        </div>
+        <p class="font-medium text-sm sm:text-base">
+          Put your model to the test and win prizes totalling <span class="font-bold text-amber-800">20,000 EUR</span>!
+        </p>
+      </div>
+
+      <!-- New Tracks Highlights -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 hover:border-slate-300 transition-colors">
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-2xs uppercase tracking-wider font-bold bg-blue-600 text-white mb-2.5">
+            NEW THIS YEAR
+          </span>
+          <p class="text-sm text-slate-700">
+            <a href="https://perception-test-challenge.github.io/kilometervision.html" target="_blank" class="font-semibold text-blue-600 hover:text-blue-800 underline underline-offset-2">
+              KilometerVision
+            </a> 
+            track probing spatial intelligence in walking tour videos, including distance estimation, landmark recognition, compass direction, and map understanding.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/90 hover:border-slate-300 transition-colors">
+          <span class="inline-flex items-center px-2 py-0.5 rounded text-2xs uppercase tracking-wider font-bold bg-indigo-600 text-white mb-2.5">
+            NEW THIS YEAR
+          </span>
+          <p class="text-sm text-slate-700">
+            <span class="font-semibold text-slate-900">KilometerAudio</span> track probing multimodal audio-video understanding in hour-long continuous walking tour recordings.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== CHALLENGES TRACKS ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <h2 class="text-xl font-bold text-slate-900 mb-6 text-center sm:text-left flex items-center gap-2">
+        <span class="w-2 h-5 bg-blue-600 rounded-full inline-block"></span>
+        Challenge Tracks
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+        <a href="https://eval.ai/web/challenges/challenge-page/2702/overview" target="_blank" 
+           class="flex items-center justify-between px-4 py-3.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 rounded-xl font-medium text-slate-800 hover:text-blue-700 transition duration-150 group">
+          <span>Unified VQA</span>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <a href="https://eval.ai/web/challenges/challenge-page/2705/overview" target="_blank" 
+           class="flex items-center justify-between px-4 py-3.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 rounded-xl font-medium text-slate-800 hover:text-blue-700 transition duration-150 group">
+          <span>Grounded VQA</span>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <a href="https://eval.ai/web/challenges/challenge-page/2707/overview" target="_blank" 
+           class="flex items-center justify-between px-4 py-3.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 rounded-xl font-medium text-slate-800 hover:text-blue-700 transition duration-150 group">
+          <span>KilometerVision</span>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+
+        <a href="https://eval.ai/web/challenges/challenge-page/2706/overview" target="_blank" 
+           class="flex items-center justify-between px-4 py-3.5 bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 rounded-xl font-medium text-slate-800 hover:text-blue-700 transition duration-150 group">
+          <span>KilometerAudio</span>
+          <svg class="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Guest Tracks (Uncomment whenever needed) -->
+      <!--
+      <div class="mt-8 pt-6 border-t border-slate-200">
+        <h3 class="text-md font-semibold text-slate-800 mb-4">Guest Tracks</h3>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://physics-iq.github.io/workshop/physics-iq-challenge.html" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 font-medium text-slate-800 text-sm" target="_blank">Physics-IQ</a>
+          <a href="https://kiva-challenge.github.io/" class="px-4 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 font-medium text-slate-800 text-sm" target="_blank">KiVA</a>
+        </div>
+      </div>
+      -->
+    </section>
+
+
+    <!-- ==================== KEYNOTE SPEAKERS ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <h2 class="text-xl font-bold text-slate-900 mb-6 text-center sm:text-left flex items-center gap-2">
+        <span class="w-2 h-5 bg-indigo-600 rounded-full inline-block"></span>
+        Keynote Speakers
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <!-- Speaker 1 -->
+        <div class="flex flex-col items-center text-center p-5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition">
+          <img src="assets/jack.png" alt="Jack L. Gallant" 
+               class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-md mb-4 ring-2 ring-slate-200"
+               onerror="this.src='https://ui-avatars.com/api/?name=Jack+Gallant&background=e2e8f0&color=334155&size=200'">
+          <a href="https://gallantlab.org/people/" target="_blank" class="font-bold text-slate-900 hover:text-blue-600 text-base">
+            Jack L. Gallant
+          </a>
+          <p class="text-xs font-medium text-slate-500 mt-1">UC Berkeley</p>
+        </div>
+
+        <!-- Speaker 2 -->
+        <div class="flex flex-col items-center text-center p-5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition">
+          <img src="assets/laura.jpg" alt="Laura Leal-Taixé" 
+               class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-md mb-4 ring-2 ring-slate-200"
+               onerror="this.src='https://ui-avatars.com/api/?name=Laura+Leal-Taixe&background=e2e8f0&color=334155&size=200'">
+          <a href="https://dvl.in.tum.de/team/lealtaixe/" target="_blank" class="font-bold text-slate-900 hover:text-blue-600 text-base">
+            Laura Leal-Taixé
+          </a>
+          <p class="text-xs font-medium text-slate-500 mt-1">Technical University Munich</p>
+        </div>
+
+        <!-- Speaker 3 -->
+        <div class="flex flex-col items-center text-center p-5 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-slate-50 transition">
+          <img src="assets/Andrew.jpeg" alt="Andrew Davison" 
+               class="w-28 h-28 rounded-full object-cover border-2 border-white shadow-md mb-4 ring-2 ring-slate-200"
+               onerror="this.src='https://ui-avatars.com/api/?name=Andrew+Davison&background=e2e8f0&color=334155&size=200'">
+          <a href="https://www.doc.ic.ac.uk/~ajd//" target="_blank" class="font-bold text-slate-900 hover:text-blue-600 text-base">
+            Andrew Davison
+          </a>
+          <p class="text-xs font-medium text-slate-500 mt-1">Imperial College London</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== WORKSHOP AGENDA ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+          <span class="w-2 h-5 bg-sky-600 rounded-full inline-block"></span>
+          Workshop Agenda
+        </h2>
+        <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-md border border-slate-200">
+          9 Sept 2026
+        </span>
+      </div>
+
+      <div class="space-y-2.5">
+        <!-- 09:00 -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:px-4 rounded-xl bg-slate-50 border border-slate-100 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/80 text-slate-700 shrink-0">
+              09:00 – 09:10
+            </span>
+            <span class="text-slate-800">Welcome &amp; Introduction</span>
+          </div>
+          <span class="text-xs text-slate-500 mt-1 sm:mt-0 font-medium">Joao Carreira / Andrew Zisserman</span>
+        </div>
+
+        <!-- 09:10 -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:px-4 rounded-xl bg-slate-50 border border-slate-100 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/80 text-slate-700 shrink-0">
+              09:10 – 09:30
+            </span>
+            <span class="text-slate-800">Challenge Overview</span>
+          </div>
+          <span class="text-xs text-slate-500 mt-1 sm:mt-0 font-medium">Viorica Patraucean</span>
+        </div>
+
+        <!-- 09:30 - Keynote -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:px-4 rounded-xl bg-indigo-50/60 border border-indigo-200/70 text-sm border-l-4 border-l-indigo-600">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-indigo-200/70 text-indigo-900 shrink-0">
+              09:30 – 10:00
+            </span>
+            <span class="font-semibold text-indigo-950 flex items-center gap-2">
+              Keynote: Laura Leal-Taixé
+              <span class="text-2xs bg-indigo-600 text-white font-bold px-1.5 py-0.5 rounded">KEYNOTE</span>
+            </span>
+          </div>
+          <span class="text-xs text-indigo-700 font-medium mt-1 sm:mt-0">Technical University Munich</span>
+        </div>
+
+        <!-- 10:00 - Coffee -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-2.5 sm:px-4 rounded-xl bg-amber-50/50 border border-amber-200/60 text-sm text-amber-900">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-amber-100 text-amber-800 shrink-0">
+              10:00 – 10:45
+            </span>
+            <span class="flex items-center gap-2 font-medium">
+              ☕ Coffee Break &amp; Poster Networking
+            </span>
+          </div>
+        </div>
+
+        <!-- 10:45 - Keynote -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:px-4 rounded-xl bg-indigo-50/60 border border-indigo-200/70 text-sm border-l-4 border-l-indigo-600">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-indigo-200/70 text-indigo-900 shrink-0">
+              10:45 – 11:15
+            </span>
+            <span class="font-semibold text-indigo-950 flex items-center gap-2">
+              Keynote: Andrew Davison
+              <span class="text-2xs bg-indigo-600 text-white font-bold px-1.5 py-0.5 rounded">KEYNOTE</span>
+            </span>
+          </div>
+          <span class="text-xs text-indigo-700 font-medium mt-1 sm:mt-0">Imperial College London</span>
+        </div>
+
+        <!-- 11:15 -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:px-4 rounded-xl bg-slate-50 border border-slate-100 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/80 text-slate-700 shrink-0">
+              11:15 – 12:00
+            </span>
+            <span class="text-slate-800 font-medium">Challenge Results &amp; Winner Presentations</span>
+          </div>
+        </div>
+
+        <!-- 12:00 - Keynote -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 sm:px-4 rounded-xl bg-indigo-50/60 border border-indigo-200/70 text-sm border-l-4 border-l-indigo-600">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-indigo-200/70 text-indigo-900 shrink-0">
+              12:00 – 12:30
+            </span>
+            <span class="font-semibold text-indigo-950 flex items-center gap-2">
+              Keynote: Jack L. Gallant
+              <span class="text-2xs bg-indigo-600 text-white font-bold px-1.5 py-0.5 rounded">KEYNOTE</span>
+            </span>
+          </div>
+          <span class="text-xs text-indigo-700 font-medium mt-1 sm:mt-0">UC Berkeley</span>
+        </div>
+
+        <!-- 12:30 -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 sm:px-4 rounded-xl bg-slate-50 border border-slate-100 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="font-mono text-xs font-semibold px-2.5 py-1 rounded bg-slate-200/80 text-slate-700 shrink-0">
+              12:30 – 13:00
+            </span>
+            <span class="text-slate-800 font-medium">Panel Discussion &amp; Closing Remarks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TIMELINE ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <h2 class="text-xl font-bold text-slate-900 mb-6 text-center sm:text-left flex items-center gap-2">
+        <span class="w-2 h-5 bg-teal-600 rounded-full inline-block"></span>
+        Challenge Timeline
+      </h2>
+      <div class="relative border-l-2 border-slate-200 ml-3.5 sm:ml-4 pl-6 space-y-5 my-2">
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-blue-600 ring-4 ring-white"></div>
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-600">June 20, 2026</div>
+          <div class="text-sm font-medium text-slate-700">Challenge server with validation tasks goes live</div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-blue-600 ring-4 ring-white"></div>
+          <div class="text-xs font-bold uppercase tracking-wider text-blue-600">July 15, 2026</div>
+          <div class="text-sm font-medium text-slate-700">Test data and tasks released</div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></div>
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-600">August 27, 2026</div>
+          <div class="text-sm font-medium text-slate-700">Deadline for challenge submissions</div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-amber-500 ring-4 ring-white"></div>
+          <div class="text-xs font-bold uppercase tracking-wider text-amber-600">August 31, 2026</div>
+          <div class="text-sm font-medium text-slate-700">Deadline for tech report submissions</div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-[31px] top-1 w-3 h-3 rounded-full bg-emerald-600 ring-4 ring-white"></div>
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-600">September 3, 2026</div>
+          <div class="text-sm font-medium text-slate-700">Decisions &amp; invitations sent to participants</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== ORGANIZERS ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <h2 class="text-xl font-bold text-slate-900 mb-6 text-center sm:text-left flex items-center gap-2">
+        <span class="w-2 h-5 bg-purple-600 rounded-full inline-block"></span>
+        Organizers
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        <!-- Viorica Patraucean -->
+        <div class="text-center group">
+          <img src="assets/viorica.jpg" alt="Viorica Patraucean" 
+               class="w-20 h-20 mx-auto rounded-full object-cover border border-slate-200 group-hover:ring-2 group-hover:ring-blue-500 transition shadow-2xs mb-2.5"
+               onerror="this.src='https://ui-avatars.com/api/?name=Viorica+Patraucean&background=f1f5f9&color=334155'">
+          <p class="font-semibold text-xs sm:text-sm text-slate-800">Viorica Patraucean</p>
+          <p class="text-2xs text-slate-500 mt-0.5">Google DeepMind</p>
+        </div>
+
+        <!-- Fedor Kitashov -->
+        <div class="text-center group">
+          <img src="assets/fedor.jpeg" alt="Fedor Kitashov" 
+               class="w-20 h-20 mx-auto rounded-full object-cover border border-slate-200 group-hover:ring-2 group-hover:ring-blue-500 transition shadow-2xs mb-2.5"
+               onerror="this.src='https://ui-avatars.com/api/?name=Fedor+Kitashov&background=f1f5f9&color=334155'">
+          <p class="font-semibold text-xs sm:text-sm text-slate-800">Fedor Kitashov</p>
+          <p class="text-2xs text-slate-500 mt-0.5">Google DeepMind</p>
+        </div>
+
+        <!-- Joao Carreira -->
+        <div class="text-center group">
+          <img src="assets/joao.jpg" alt="Joao Carreira" 
+               class="w-20 h-20 mx-auto rounded-full object-cover border border-slate-200 group-hover:ring-2 group-hover:ring-blue-500 transition shadow-2xs mb-2.5"
+               onerror="this.src='https://ui-avatars.com/api/?name=Joao+Carreira&background=f1f5f9&color=334155'">
+          <p class="font-semibold text-xs sm:text-sm text-slate-800">Joao Carreira</p>
+          <p class="text-2xs text-slate-500 mt-0.5">Google DeepMind</p>
+        </div>
+
+        <!-- Shiry Ginosar -->
+        <div class="text-center group">
+          <img src="assets/shiry.png" alt="Shiry Ginosar" 
+               class="w-20 h-20 mx-auto rounded-full object-cover border border-slate-200 group-hover:ring-2 group-hover:ring-blue-500 transition shadow-2xs mb-2.5"
+               onerror="this.src='https://ui-avatars.com/api/?name=Shiry+Ginosar&background=f1f5f9&color=334155'">
+          <p class="font-semibold text-xs sm:text-sm text-slate-800">Shiry Ginosar</p>
+          <p class="text-2xs text-slate-500 mt-0.5">TTI Chicago</p>
+        </div>
+
+        <!-- Dima Damen -->
+        <div class="text-center group">
+          <img src="assets/dima.jpg" alt="Dima Damen" 
+               class="w-20 h-20 mx-auto rounded-full object-cover border border-slate-200 group-hover:ring-2 group-hover:ring-blue-500 transition shadow-2xs mb-2.5"
+               onerror="this.src='https://ui-avatars.com/api/?name=Dima+Damen&background=f1f5f9&color=334155'">
+          <p class="font-semibold text-xs sm:text-sm text-slate-800">Dima Damen</p>
+          <p class="text-2xs text-slate-500 mt-0.5">Bristol University</p>
+        </div>
+
+        <!-- Andrew Zisserman -->
+        <div class="text-center group">
+          <img src="assets/andrew.jpg" alt="Andrew Zisserman" 
+               class="w-20 h-20 mx-auto rounded-full object-cover border border-slate-200 group-hover:ring-2 group-hover:ring-blue-500 transition shadow-2xs mb-2.5"
+               onerror="this.src='https://ui-avatars.com/api/?name=Andrew+Zisserman&background=f1f5f9&color=334155'">
+          <p class="font-semibold text-xs sm:text-sm text-slate-800">Andrew Zisserman</p>
+          <p class="text-2xs text-slate-500 mt-0.5">Oxford University</p>
+        </div>
+      </div>
+
+      <!-- Additional Past Organizers (Uncomment whenever needed) -->
+      <!--
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 pt-6 border-t border-slate-100">
+        <div class="text-center">
+          <img src="assets/joe.png" alt="Joe Heyward" class="w-16 h-16 mx-auto rounded-full object-cover border border-slate-200 mb-2">
+          <p class="font-semibold text-xs text-slate-800">Joe Heyward</p>
+          <p class="text-2xs text-slate-500">Google DeepMind</p>
+        </div>
+        <div class="text-center">
+          <img src="assets/nikhil.jpg" alt="Nikhil Parthasarathy" class="w-16 h-16 mx-auto rounded-full object-cover border border-slate-200 mb-2">
+          <p class="font-semibold text-xs text-slate-800">Nikhil Parthasarathy</p>
+          <p class="text-2xs text-slate-500">Google DeepMind</p>
+        </div>
+        <div class="text-center">
+          <img src="assets/tyler.jpg" alt="Tyler Zhu" class="w-16 h-16 mx-auto rounded-full object-cover border border-slate-200 mb-2">
+          <p class="font-semibold text-xs text-slate-800">Tyler Zhu</p>
+          <p class="text-2xs text-slate-500">Princeton / DeepMind</p>
+        </div>
+        <div class="text-center">
+          <img src="assets/aravindh.jpeg" alt="Aravindh Mahendran" class="w-16 h-16 mx-auto rounded-full object-cover border border-slate-200 mb-2">
+          <p class="font-semibold text-xs text-slate-800">Aravindh Mahendran</p>
+          <p class="text-2xs text-slate-500">Google DeepMind</p>
+        </div>
+      </div>
+      -->
+    </section>
+
+
+    <!-- ==================== PREVIOUS WORKSHOPS ==================== -->
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <h2 class="text-xl font-bold text-slate-900 mb-5 text-center sm:text-left flex items-center gap-2">
+        <span class="w-2 h-5 bg-slate-600 rounded-full inline-block"></span>
+        Previous Workshops
+      </h2>
+      <div class="flex flex-wrap gap-2.5 justify-center sm:justify-start">
+        <a href="https://perception-test-challenge.github.io/challenge2025.html" target="_blank"
+           class="px-4 py-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-700 transition">
+          Challenge 2025
+        </a>
+        <a href="https://ptchallenge-workshop.github.io/" target="_blank"
+           class="px-4 py-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-700 transition">
+          Challenge 2024
+        </a>
+        <a href="https://ptchallenge-workshop.github.io/challenge2023.html" target="_blank"
+           class="px-4 py-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-700 transition">
+          Challenge 2023
+        </a>
+        <a href="https://computerperception.github.io/" target="_blank"
+           class="px-4 py-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl text-xs sm:text-sm font-medium text-slate-700 transition">
+          Workshop 2022
+        </a>
+      </div>
+    </section>
+
+    <!-- Past Winners Section (Uncomment to display) -->
+    <!--
+    <section class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+      <h2 class="text-xl font-bold text-slate-900 mb-3">The Third Perception Test Challenge Winners</h2>
+      <p class="text-sm text-slate-600 mb-6">
+        We received <strong>557 submissions</strong> from <strong>81 teams</strong> across five tracks. We awarded runner-up and winner prizes per track.
+      </p>
+
+      <div class="space-y-4 text-sm text-slate-700 divide-y divide-slate-100">
+        <div class="pt-3">
+          <h3 class="font-semibold text-slate-900">Unified multiple-choice videoQA</h3>
+          <ul class="list-disc list-inside mt-1 space-y-1 text-slate-600">
+            <li>Winner: <strong>Team Wind_Rain_Tower</strong> (Du Jingtao) — <a href="https://drive.google.com/file/d/1fwb1q-I1V0dCUT6p7DdNV6YYnaUDjRCn/view?usp=sharing" class="text-blue-600 underline" target="_blank">report</a></li>
+            <li>Winner: <strong>Team njust_kmg_2</strong> (Zhe Zhang, Haotian Si, Xiangbo Shu, Yang Yang) — <a href="https://drive.google.com/file/d/1AS9_dIw6H9r9EGzxIktTUY85fcL-F0Dk/view?usp=sharing" class="text-blue-600 underline" target="_blank">report</a></li>
+            <li>Runner-up: <strong>Team PCIE_VQA</strong> (Feng Chen, Kanokphan Lertniphonphan, Jun Xie, Zimeng Tan, Zhepeng Wang) — <a href="https://drive.google.com/file/d/1tEkkSAUFbVOsBSuVbT58wsmSOsrNuA84/view?usp=sharing" class="text-blue-600 underline" target="_blank">report</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    -->
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-slate-200 bg-white py-8 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4">
+      &copy; 2026 Perception Test Team &bull; European Conference on Computer Vision (ECCV 2026)
+    </div>
+  </footer>
+
+</body>
+</html>
