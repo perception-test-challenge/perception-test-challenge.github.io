@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KilometerAudio | ECCV 2026</title>
+    <!-- Favicons -->
+    <link href="assets/fav.png" rel="icon">
+    <link href="assets/fav.png" rel="apple-touch-icon">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --link-color: #2980b9;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .conference {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--link-color);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .authors {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .authors a {
+            color: var(--link-color);
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .affiliations {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .notes {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .button-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 3rem;
+        }
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: var(--link-color);
+            text-decoration: none;
+        }
+        .section {
+            margin-bottom: 3rem;
+        }
+        .abstract-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--link-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+        .figure-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .figure-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 10px;
+            text-align: justify;
+        }
+        /* Interactive 2x2 Example Cards */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+            gap: 18px;
+            margin: 1.5rem 0 0.75rem;
+            text-align: left;
+        }
+        .example-card {
+            background-color: #f8f9fa;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 1rem 1.15rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .example-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.65rem;
+        }
+        .example-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #1e293b;
+        }
+        .chip-group {
+            display: flex;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+        .chip {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 2px 7px;
+            border-radius: 4px;
+            letter-spacing: 0.03em;
+        }
+        .chip-audio { background-color: #d9480f; }
+        .chip-visual { background-color: #1c7ed6; }
+        .chip-time { background-color: #5f3dc4; }
+        .yt-embed-wrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #000;
+            margin-bottom: 0.45rem;
+        }
+        .yt-embed-wrap iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .timecode-bar {
+            font-size: 0.82rem;
+            color: #475569;
+            margin-bottom: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .timecode-bar a {
+            font-weight: 600;
+            color: var(--link-color);
+        }
+        .example-q {
+            font-style: italic;
+            font-size: 0.92rem;
+            color: #1e293b;
+            margin: 0 0 0.45rem 0;
+            line-height: 1.4;
+        }
+        .example-opts {
+            list-style: none;
+            padding-left: 0.4rem;
+            margin: 0;
+            font-size: 0.88rem;
+            line-height: 1.45;
+        }
+        .example-opts li {
+            margin-bottom: 2px;
+            color: #334155;
+        }
+        .example-opts li.correct {
+            color: #2b8a3e;
+            font-weight: 700;
+        }
+        .data-table {
+            width: 100%;
+            max-width: 650px;
+            margin: 1.5rem auto;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+        .data-table th, .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .data-table th {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            font-weight: 700;
+            border-top: 2px solid var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .data-table td.num, .data-table th.num {
+            text-align: right;
+        }
+        .data-table tr:last-child td {
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .citation-container {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 2rem;
+        }
+        .bibtex-box {
+            background-color: #ffffff;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            color: #333;
+        }
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>KilometerAudio: Probing Multimodal Audio-Visual Understanding in Hour-Long Walking Tour Videos</h1>
+    <div class="conference">Perception Test Challenge at ECCV 2026</div>
+
+    <div class="authors">
+        Fedor Kitashov<sup>1</sup>,
+        João Carreira<sup>1</sup>,
+        Shiry Ginosar<sup>2</sup>,
+        Dima Damen<sup>1,3</sup>,
+        Andrew Zisserman<sup>1,4</sup>,
+        Viorica Pătrăucean<sup>1&#x2709;</sup>
+    </div>
+
+    <div class="affiliations">
+        <sup>1</sup>Google DeepMind &nbsp; &nbsp;
+        <sup>2</sup>Toyota Technological Institute at Chicago &nbsp; &nbsp;
+        <sup>3</sup>University of Bristol &nbsp; &nbsp;
+        <sup>4</sup>University of Oxford
+    </div>
+
+    <div class="notes">
+        <sup>&#x2709;</sup>corresponding author
+    </div>
+
+    <div class="button-row">
+        <a href="https://arxiv.org/abs/2610.12081" target="_blank" class="btn">📄 Challenge Report (arXiv)</a>
+        <a href="https://eval.ai/web/challenges/challenge-page/2706/overview" target="_blank" class="btn">💻 Benchmark (eval.ai challenge)</a>
+        <a href="https://storage.googleapis.com/dm-perception-test/kilometervision_2026_public/kilometeraudio.zip" class="btn" download>📦 Dataset (.zip, 54 KB)</a>
+    </div>
+
+    <div class="figure-container">
+        <div class="examples-grid">
+            <!-- Card 1: Istanbul (mA9lYWyXMYU_1) -->
+            <div class="example-card">
+                <div class="example-header">
+                    <span class="example-title">Sound source at a landmark</span>
+                    <span class="chip-group">
+                        <span class="chip chip-audio">AUDIO</span>
+                        <span class="chip chip-visual">VISUAL</span>
+                    </span>
+                </div>
+                <div class="yt-embed-wrap">
+                    <iframe src="https://www.youtube.com/embed/mA9lYWyXMYU?start=1442" title="Istanbul Walking Tour at 24:02" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="timecode-bar">
+                    <span>📍 Istanbul, Turkey (<code>mA9lYWyXMYU</code>)</span>
+                    <a href="https://www.youtube.com/watch?v=mA9lYWyXMYU&t=1442s" target="_blank">&#9654; Watch at 24:02&ndash;24:14 &#8599;</a>
+                </div>
+                <p class="example-q">Q: When passing by Caffe Nero, what sound can be heard?</p>
+                <ul class="example-opts">
+                    <li>(A) A person clapping hands</li>
+                    <li>(B) An ambulance</li>
+                    <li class="correct">(C) A dog barking &nbsp;&#10003;</li>
+                    <li>(D) Live music</li>
+                    <li>(E) A cat meowing</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Kuala Lumpur (yLTycPjm0nk_1) -->
+            <div class="example-card">
+                <div class="example-header">
+                    <span class="example-title">Music identification</span>
+                    <span class="chip-group">
+                        <span class="chip chip-audio">AUDIO</span>
+                        <span class="chip chip-visual">VISUAL</span>
+                    </span>
+                </div>
+                <div class="yt-embed-wrap">
+                    <iframe src="https://www.youtube.com/embed/yLTycPjm0nk?start=2858" title="Kuala Lumpur Walking Tour at 47:38" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="timecode-bar">
+                    <span>📍 Kuala Lumpur, Malaysia (<code>yLTycPjm0nk</code>)</span>
+                    <a href="https://www.youtube.com/watch?v=yLTycPjm0nk&t=2858s" target="_blank">&#9654; Watch at 47:38&ndash;48:20 &#8599;</a>
+                </div>
+                <p class="example-q">Q: There is a busker with a guitar in the outdoor mall wearing a cup. What song are they singing?</p>
+                <ul class="example-opts">
+                    <li>(A) I want it that way</li>
+                    <li>(B) Purple Rain</li>
+                    <li>(C) I will survive</li>
+                    <li>(D) I wanna dance with somebody</li>
+                    <li class="correct">(E) More Than Words &nbsp;&#10003;</li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Zurich (_NmYvuEILw4_1) -->
+            <div class="example-card">
+                <div class="example-header">
+                    <span class="example-title">Audio event localisation</span>
+                    <span class="chip-group">
+                        <span class="chip chip-audio">AUDIO</span>
+                        <span class="chip chip-time">TIME</span>
+                    </span>
+                </div>
+                <div class="yt-embed-wrap">
+                    <iframe src="https://www.youtube.com/embed/_NmYvuEILw4?start=2400" title="Zurich Walking Tour at 40:00" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="timecode-bar">
+                    <span>📍 Zurich, Switzerland (<code>_NmYvuEILw4</code>)</span>
+                    <a href="https://www.youtube.com/watch?v=_NmYvuEILw4&t=2400s" target="_blank">&#9654; Watch at 40:00 &#8599;</a>
+                </div>
+                <p class="example-q">Q: Around what time of the video is there an ambulance heard?</p>
+                <ul class="example-opts">
+                    <li>(A) Around 30:00</li>
+                    <li>(B) Around 15:00</li>
+                    <li>(C) Around 20:00</li>
+                    <li>(D) Around 10:00</li>
+                    <li class="correct">(E) Around 40:00 &nbsp;&#10003;</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Amsterdam (E07rTPgIvn0_1) -->
+            <div class="example-card">
+                <div class="example-header">
+                    <span class="example-title">Audio counting &rarr; time of day</span>
+                    <span class="chip-group">
+                        <span class="chip chip-audio">AUDIO</span>
+                        <span class="chip chip-time">TIME</span>
+                    </span>
+                </div>
+                <div class="yt-embed-wrap">
+                    <iframe src="https://www.youtube.com/embed/E07rTPgIvn0?start=4222" title="Amsterdam Walking Tour at 1:10:22" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="timecode-bar">
+                    <span>📍 Amsterdam, Netherlands (<code>E07rTPgIvn0</code>)</span>
+                    <a href="https://www.youtube.com/watch?v=E07rTPgIvn0&t=4222s" target="_blank">&#9654; Watch at 1:10:22&ndash;1:11:00 &#8599;</a>
+                </div>
+                <p class="example-q">Q: At some point during the video, the time can be inferred from a bell ringing. How many times did the bell ring and what was the time of day?</p>
+                <ul class="example-opts">
+                    <li>(A) The bell rang 9 times and it was 9 o'clock in the evening</li>
+                    <li class="correct">(B) The bell rang 8 times and it was 8 o'clock in the evening &nbsp;&#10003;</li>
+                    <li>(C) The bell rang 9 times and it was 8 o'clock in the evening</li>
+                    <li>(D) The bell rang 8 times and it was 8 o'clock in the morning</li>
+                    <li>(E) The bell rang 9 times and it was 9 o'clock in the morning</li>
+                </ul>
+            </div>
+        </div>
+        <p class="caption"><strong>Figure 1: KilometerAudio</strong> — Example KilometerAudio questions from the validation set (correct answer in green), with embedded YouTube videos queued to the relevant moment in each hour-long walking tour. Each question requires joint reasoning over the audio track and visual stream: identifying sound sources at visual landmarks, recognising live music in the wild, localising audio events in time, and combining acoustic counting with visual cues.</p>
+    </div>
+
+    <div class="section abstract-box">
+        <h2>Overview</h2>
+        <p>To assess models' audio-visual capabilities in large-scale environments, we introduce the <strong>KilometerAudio</strong> benchmark as part of the <a href="https://perception-test-challenge.github.io/">Fourth Perception Test Challenge at ECCV 2026</a> (<a href="https://arxiv.org/abs/2610.12081" target="_blank">Kitashov et al., 2026</a>). It tests the ability of foundation models—including agentic approaches—to reason about the interlink between audio and visual modalities in very long videos captured while walking for several kilometers around an urban environment. Natural sounds automatically captured in these public YouTube videos include human-made objects (cars, motorbikes, church bells, sirens), natural sounds (birds chirping and dogs barking), speech and street music, as well as acoustic urban pollution. Importantly, the videos are unedited and contain no overlay music, making them ideal for naturalistic multimodal reasoning. Due to the nature of walking-tour videos, audio is often caused by an event <em>out of sight</em> of the camera. Reasoning jointly about in-view visuals and out-of-view audio across hour-long recordings makes this benchmark uniquely challenging.</p>
+    </div>
+
+    <div class="section">
+        <h2>Benchmark &amp; Task Design</h2>
+        <p>In the KilometerAudio task, a model receives a full hour-long walking-tour video (1–3 hours long, more than 70 minutes on average) including its audio track, together with a question and five candidate answer options, out of which only one is correct. All questions were collected with human raters and verified by our research team to require processing both the audio and visual modalities:</p>
+        <ul>
+            <li><strong>Sound sources in space:</strong> Identifying what sound can be heard when passing a specific visual landmark or street location (often from an out-of-view source).</li>
+            <li><strong>Temporal audio localisation:</strong> Pinpointing when an acoustic event (e.g., an ambulance siren, bell, or announcement) occurs within an hour-long recording.</li>
+            <li><strong>Counting &amp; multi-hop audio-visual reasoning:</strong> Counting acoustic events or using an audio cue to locate visual evidence (e.g., counting church bell chimes to infer the time of day).</li>
+            <li><strong>Speech &amp; music recognition in the wild:</strong> Recognising songs performed by street buskers or understanding spoken announcements grounded in the visual scene.</li>
+        </ul>
+
+        <div class="figure-container" style="max-width: 760px; margin: 2rem auto;">
+            <img src="assets/audiobench.png" alt="Audio-Video Benchmark Duration Comparison">
+            <p class="caption"><strong>Figure 2: Comparison with existing multiple-choice audio-video benchmarks.</strong> KilometerAudio features the longest videos (72.2 minutes on average) and focuses exclusively on audio-visual events; Video-MME (Long) has videos up to 1 hour long, but only a small fraction of its questions focus on audio events.</p>
+        </div>
+
+        <p>The validation split (8 questions on 6 videos) reuses the audio-related questions of the hour-long video QA benchmark from the 2024 and 2025 editions. All 500 test questions are new, and only 3 of the 218 test videos appeared in previous editions. No training split is provided, enforcing zero-shot evaluation. The evaluation metric is <strong>top-1 accuracy</strong>.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Split</th>
+                    <th class="num">Num Videos</th>
+                    <th class="num">Num Questions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Train</td>
+                    <td class="num">&mdash;</td>
+                    <td class="num">&mdash;</td>
+                </tr>
+                <tr>
+                    <td>Validation</td>
+                    <td class="num">6</td>
+                    <td class="num">8</td>
+                </tr>
+                <tr>
+                    <td>Test</td>
+                    <td class="num">218</td>
+                    <td class="num">500</td>
+                </tr>
+                <tr>
+                    <td><strong>Total (<a href="https://storage.googleapis.com/dm-perception-test/kilometervision_2026_public/kilometeraudio.zip" download>kilometeraudio.zip</a>)</strong></td>
+                    <td class="num"><strong>221 unique</strong></td>
+                    <td class="num"><strong>508</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>ECCV 2026 Challenge Results &amp; Key Findings</h2>
+        <p>The table below summarises the awarded entries on the KilometerAudio test set compared to the random baseline:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Award / Rank</th>
+                    <th>Team</th>
+                    <th class="num">Top-1 Accuracy</th>
+                    <th>Resources</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Baseline</td>
+                    <td>Random</td>
+                    <td class="num">0.174</td>
+                    <td>&mdash;</td>
+                </tr>
+                <tr>
+                    <td>Runner-up</td>
+                    <td><strong>WW11</strong></td>
+                    <td class="num">0.752</td>
+                    <td><a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/eccv_track3%20-%20MAOYU%20WEN.pdf" target="_blank">report</a></td>
+                </tr>
+                <tr>
+                    <td>Winner</td>
+                    <td><strong>IUCV</strong></td>
+                    <td class="num">0.782</td>
+                    <td><a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/iucv%20-%20Tony%20Ha%20%28Tony%29.pdf" target="_blank">report</a></td>
+                </tr>
+                <tr>
+                    <td>Best-performing<sup>&dagger;</sup></td>
+                    <td><strong>CloudAI-evolve</strong></td>
+                    <td class="num">0.864</td>
+                    <td><a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/KMA%20-%20Nikhil%20T.V.S.pdf" target="_blank">report</a> and <a href="https://docs.google.com/presentation/d/e/2PACX-1vSDEEaOMjgTkBSA1IFy6k8NoEI4ZzO9ijhEh1cF1O6B0N6XFncsQXNMXwpbgpaRLz1rs8Fq3-u1eMsO/pub?start=true&amp;loop=false&amp;delayms=3000" target="_blank">slides</a></td>
+                </tr>
+                <tr>
+                    <td>Best Generalist (all 4 tracks)</td>
+                    <td><strong>Wind_Rain_Tower</strong></td>
+                    <td class="num">0.506</td>
+                    <td><a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/wind_rain_tower_perception_test_2026_pure_qwen%20-%20%E6%9D%9C%E4%BA%95%E6%B6%9B.pdf" target="_blank">report</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size: 0.85rem; color: #666; text-align: center; margin-top: -0.75rem;"><sup>&dagger;</sup>Best-performing entry overall, not eligible for monetary prizes due to Google affiliation.</p>
+
+        <ul>
+            <li><strong>Agentic audio-visual indexing (<a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/iucv%20-%20Tony%20Ha%20%28Tony%29.pdf" target="_blank">Team IUCV</a>, Winner — 0.782):</strong> Proposed <em>AVRA</em>, a training-free audio-visual reasoning agent built on Gemini 3.7 Flash. For each video, a question-independent index is pre-computed with frozen models—447 AudioSet event classes from BEATs, object detections, and multilingual OCR—allowing the agent to localise candidate time windows, inspect raw audio and video directly, and derive an answer before reading the options.</li>
+            <li><strong>Multi-modal verification under a strict frame budget (<a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/eccv_track3%20-%20MAOYU%20WEN.pdf" target="_blank">Team WW11</a>, Runner-up — 0.752):</strong> Combined Gemini 3.1 Pro planning (capped at 48 frames/crops per question) with offline Whisper speech transcripts, CLAP sound-event retrieval, and Qwen3-Omni audio verification, updating answers only when at least two independent modalities agreed.</li>
+            <li><strong>Self-evolving tool compilation (<a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/KMA%20-%20Nikhil%20T.V.S.pdf" target="_blank">Team CloudAI-evolve</a>, Best-performing — 0.864):</strong> Used an agentic pipeline with signal-processing tools and Gemini reasoning to explore the validation set and a small unlabelled subset of test questions to compile a task-solving strategy, reaching 86.4% accuracy.</li>
+            <li><strong>Tool-augmented agents vs. standalone models:</strong> While expensive agentic pipelines with dedicated audio-indexing tools reached 0.782–0.864, the Best Generalist single-model entry (<a href="https://storage.googleapis.com/dm-perception-test/eccv_2026_technical_reports/wind_rain_tower_perception_test_2026_pure_qwen%20-%20%E6%9D%9C%E4%BA%95%E6%B6%9B.pdf" target="_blank">Team Wind_Rain_Tower</a>, Qwen3.8-Max with speech transcription) scored 0.506—showing that hour-long audio-visual reasoning is tractable for tool-orchestrating agents but remains an open challenge for standalone multimodal models.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Citation</h2>
+        <div class="citation-container">
+            <div class="bibtex-box">
+<pre style="margin: 0;"><code>@misc{kitashov2026perceptiontest2026challenge,
+  title={Perception Test 2026: Challenge Summary and Extension to City-scale Audio-Visual Reasoning},
+  author={Fedor Kitashov and Jo{\~a}o Carreira and Shiry Ginosar and
+          Dima Damen and Andrew Zisserman and Viorica P{\u{a}}tr{\u{a}}ucean},
+  year={2026},
+  eprint={2610.12081},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.12081}
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
